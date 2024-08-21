@@ -14,7 +14,7 @@ import (
     "github.com/streadway/amqp"
 )
 
-// @title Gaminifica Sender API
+// @title  Sender API
 // @version 1.0
 // @description Esta é uma API para enviar e-mails.
 // @host localhost:8080

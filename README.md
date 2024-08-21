@@ -1,8 +1,10 @@
-# Gaminifica Sender
+# Sender
 
 Este projeto é um exemplo de aplicação Go integrada com RabbitMQ. Ele usa Docker para facilitar o ambiente de desenvolvimento e execução.
 
 ## Requisitos
+
+É necessário ter disponivel um serviço de Email. 
 
 Certifique-se de ter os seguintes softwares instalados:
 
@@ -12,11 +14,6 @@ Certifique-se de ter os seguintes softwares instalados:
 ## Configuração
 
 1. Clone o repositório:
-
-    ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
-    cd <NOME_DO_PROJETO>
-    ```
 
 2. Crie um arquivo `.env` na raiz do projeto (caso ele já não exista). Adicione as variáveis de ambiente necessárias para o seu projeto:
 

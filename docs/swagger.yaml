@@ -16,7 +16,7 @@ host: localhost:8080
 info:
   contact: {}
   description: Esta é uma API para enviar e-mails.
-  title: Gaminifica Sender API
+  title: Sender API
   version: "1.0"
 paths:
   /active-worker:
@@ -25,10 +25,6 @@ paths:
       responses:
         "200":
           description: Worker Executado com sucesso
-          schema:
-            type: string
-        "400":
-          description: Erro ao executar worker
           schema:
             type: string
         "500":

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: gaminifica_sender
+    container_name: go_sender
     ports:
       - "8080:8080"  # Porta do servidor Go
     env_file:

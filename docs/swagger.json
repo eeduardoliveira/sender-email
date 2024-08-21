@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "Esta é uma API para enviar e-mails.",
-        "title": "Gaminifica Sender API",
+        "title": "Sender API",
         "contact": {},
         "version": "1.0"
     },
@@ -16,12 +16,6 @@
                 "responses": {
                     "200": {
                         "description": "Worker Executado com sucesso",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Erro ao executar worker",
                         "schema": {
                             "type": "string"
                         }

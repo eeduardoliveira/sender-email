@@ -26,12 +26,6 @@ const docTemplate = `{
                             "type": "string"
                         }
                     },
-                    "400": {
-                        "description": "Erro ao executar worker",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     "500": {
                         "description": "Erro ao executar worker",
                         "schema": {
@@ -112,7 +106,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8080",
 	BasePath:         "/api",
 	Schemes:          []string{},
-	Title:            "Gaminifica Sender API",
+	Title:            "Sender API",
 	Description:      "Esta é uma API para enviar e-mails.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
