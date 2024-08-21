@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: gaminifica_sender
+    ports:
+      - "8080:8080"  # Porta do servidor Go
+    env_file:
+      - .env  # Carregar o arquivo .env
+    networks:
+      - proxy
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # Porta do RabbitMQ
+      - "15672:15672"  # Porta da interface de gerenciamento do RabbitMQ
+    networks:
+      - proxy
+
+
+
+
+networks: 
+  proxy:
+    external: true

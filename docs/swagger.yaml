@@ -1,0 +1,67 @@
+basePath: /api
+definitions:
+  email.EmailRequest:
+    properties:
+      body:
+        example: Este é um exemplo
+        type: string
+      subject:
+        example: Hello World
+        type: string
+      to:
+        example: recipient@example.com
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Esta é uma API para enviar e-mails.
+  title: Gaminifica Sender API
+  version: "1.0"
+paths:
+  /active-worker:
+    get:
+      description: '-'
+      responses:
+        "200":
+          description: Worker Executado com sucesso
+          schema:
+            type: string
+        "400":
+          description: Erro ao executar worker
+          schema:
+            type: string
+        "500":
+          description: Erro ao executar worker
+          schema:
+            type: string
+      summary: Inicia o Worker
+  /send-email:
+    post:
+      consumes:
+      - application/json
+      description: Envia um e-mail para o destinatário especificado
+      parameters:
+      - description: Dados do e-mail
+        in: body
+        name: email
+        required: true
+        schema:
+          $ref: '#/definitions/email.EmailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: E-mail enviado com sucesso
+          schema:
+            type: string
+        "400":
+          description: Payload inválido
+          schema:
+            type: string
+        "500":
+          description: Erro ao enviar e-mail
+          schema:
+            type: string
+      summary: Envia um e-mail
+swagger: "2.0"

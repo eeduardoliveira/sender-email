@@ -1,0 +1,101 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Esta é uma API para enviar e-mails.",
+        "title": "Gaminifica Sender API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "paths": {
+        "/active-worker": {
+            "get": {
+                "description": "-",
+                "summary": "Inicia o Worker",
+                "responses": {
+                    "200": {
+                        "description": "Worker Executado com sucesso",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Erro ao executar worker",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Erro ao executar worker",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/send-email": {
+            "post": {
+                "description": "Envia um e-mail para o destinatário especificado",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Envia um e-mail",
+                "parameters": [
+                    {
+                        "description": "Dados do e-mail",
+                        "name": "email",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/email.EmailRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "E-mail enviado com sucesso",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Payload inválido",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Erro ao enviar e-mail",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "email.EmailRequest": {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "example": "Este é um exemplo"
+                },
+                "subject": {
+                    "type": "string",
+                    "example": "Hello World"
+                },
+                "to": {
+                    "type": "string",
+                    "example": "recipient@example.com"
+                }
+            }
+        }
+    }
+}
